@@ -19,7 +19,10 @@ export default function Home() {
     <div className="relative z-10">
       <LightBeam />
       <div className="relative z-10 flex flex-col items-center justify-center text-center">
-        <GradientButton text="Give us a ⭐️" href="/about" />
+        <GradientButton
+          text="Give us a ⭐️"
+          href="https://github.com/Ionfinisher/askiq"
+        />
         <h1 className="text-6xl font-bold text-gray-300 mt-4">ASKIQ</h1>
         <p className="text-lg text-gray-400 my-4">
           An API Powered by GPT-4o-mini for intelligent FAQ generation
