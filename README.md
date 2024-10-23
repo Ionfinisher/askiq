@@ -2,12 +2,12 @@
 
 ## Overview
 
-This project is an **FAQ Generator API** built using **Next.js** and **GPT-4o**, designed to create precise and relevant FAQs based on input topics. The API is rate-limited using the (@unkey/ratelinit)[https://www.unkey.com/docs/libraries/ts/ratelimit] package, ensuring controlled access to the service.
+This project is an **FAQ Generator API** built using **Next.js** and **GPT-4o**, designed to create precise and relevant FAQs based on input topics. The API is rate-limited using the [@unkey/ratelinit](https://www.unkey.com/docs/libraries/ts/ratelimit) package, ensuring controlled access to the service.
 
 ### Features
 
 - Generate FAQs with GPT-4o models for any topic.
-- Rate-limiting with (Unkey)[https://www.unkey.com/] to manage API request quotas within a specific window.
+- Rate-limiting with [Unkey](https://www.unkey.com/) to manage API request quotas within a specific window.
 
 ## Prerequisites
 
@@ -80,8 +80,8 @@ The API is rate-limited using unkey. Users are limited by request quotas per 10 
 
 The API returns the following error codes:
 
-`400` Bad Request: Missing or incorrect parameters.
-`429` Too Many Requests: Rate limit exceeded.
+`400` Bad Request: Missing or incorrect parameters.<br/>
+`429` Too Many Requests: Rate limit exceeded.<br/>
 `500` Internal Server Error: Server issues (e.g., OpenAI API issues).
 
 ## License
