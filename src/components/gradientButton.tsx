@@ -16,6 +16,7 @@ const GradientButton: React.FC<GradientButtonProps> = ({ text, href }) => {
         href={href}
         className="relative z-10 inline-flex items-center justify-center w-full px-8 py-2 text-lg text-gray-300 transition-all duration-200 bg-transparent border-2 border-zinc-700 sm:w-auto rounded-full hover:bg-zinc-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
         role="button"
+        target="_blank"
       >
         {text}
       </Link>
