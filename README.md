@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FAQ Generator API with GPT-4o
+
+## Overview
+
+This project is an **FAQ Generator API** built using **Next.js** and **GPT-4o**, designed to create precise and relevant FAQs based on input topics. The API is rate-limited using the (@unkey/ratelinit)[https://www.unkey.com/docs/libraries/ts/ratelimit] package, ensuring controlled access to the service.
+
+### Features
+
+- Generate FAQs with GPT-4o models for any topic.
+- Rate-limiting with (Unkey)[https://www.unkey.com/] to manage API request quotas within a specific window.
+
+## Prerequisites
+
+- Node.js (>= 18.x.x)
+- Project API Key for GPT-4o from OpenAI
+- Unkey root key
 
 ## Getting Started
 
-First, run the development server:
+### Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/Ionfinisher/askiq.git
+cd askiq
+npm install
+```
+
+### Environment Setup
+
+Change the `.env.example` to `.env` in the project root and set the following environment variables:
+
+```bash
+# OpenAI project API Key
+OPENAI_PROJECT_KEY=your-openai-project-key
+# Unkey rate-limiting secret
+UNKEY_ROOT_KEY=your-unkey-root-key
+```
+
+### Run Locally
+
+After configuring the environment variables, start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The API will be available at http://localhost:3000/api/v1/askiq.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Endpoint: /api/v1/askiq
 
-## Learn More
+Generate an FAQ for a given topic.
 
-To learn more about Next.js, take a look at the following resources:
+Method: `POST`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Request Body:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```json
+{
+  "topic": "your-topic-here"
+}
+```
 
-## Deploy on Vercel
+Response:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```json
+{
+  "response": "your response"
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Rate Limiting
+
+The API is rate-limited using unkey. Users are limited by request quotas per 10 seconds. You can customize this limit in your configuration.
+
+## Error Handling
+
+The API returns the following error codes:
+
+`400` Bad Request: Missing or incorrect parameters.
+`429` Too Many Requests: Rate limit exceeded.
+`500` Internal Server Error: Server issues (e.g., OpenAI API issues).
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
