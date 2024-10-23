@@ -70,25 +70,10 @@ Response:
 {
   "faqs": [
     {
-      "question": "What is Artificial Intelligence?",
-      "answer": "Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems."
+      "question": "Question 1",
+      "answer": "Answer 1"
     },
-    {
-      "question": "What are the different types of AI?",
-      "answer": "The different types of AI include narrow AI, general AI, and superintelligent AI."
-    },
-    {
-      "question": "What are the applications of AI?",
-      "answer": "The applications of AI include natural language processing, image recognition, and autonomous vehicles."
-    },
-    {
-      "question": "What are the benefits of AI?",
-      "answer": "The benefits of AI include increased efficiency, improved accuracy, and enhanced decision-making."
-    },
-    {
-      "question": "What are the risks of AI?",
-      "answer": "The risks of AI include job displacement, bias in algorithms, and ethical concerns."
-    }
+    ...
   ]
 }
 ```
