@@ -1,6 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import rateLimit from "@/lib/unkey";
 import openai from "@/lib/openai";
+import { parseFaqResponse } from "@/lib/responseParser";
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   const { topic } = await request.json();
@@ -34,7 +35,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         {
           role: "system",
           content:
-            "You are an experienced customer relations agent.I will give you a topic and you will generate a 5 points FAQ related to the topic. Please provide answers that are clear, concise, and structured for a wide audience. Responde with nothing but the FAQ and ensure the answers are based on reliable information and address common questions. Ensure that the answers are accurate and helpful to both beginners and intermediate users. Return nothing but the FAQ in the following format: Q: What is the topic? A: The topic is...",
+            "You are an experienced customer relations agent.I will give you a topic and you will generate a 5 points FAQ related to the topic. Please provide answers that are clear, concise, and structured for a wide audience. Responde with nothing but the FAQ and ensure the answers are based on reliable information and address common questions. Ensure that the answers are accurate and helpful to both beginners and intermediate users. Return nothing but the FAQ in the following format: Q: question? A: answer...",
         },
         {
           role: "user",
@@ -43,7 +44,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       ],
     });
 
-    const answer = response.choices[0].message.content;
+    const answer = parseFaqResponse(response);
 
     return NextResponse.json(answer, { status: 200 });
   } catch (error) {
