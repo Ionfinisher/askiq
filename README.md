@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is an **FAQ Generator API** built using **Next.js** and **GPT-4o**, designed to create precise and relevant FAQs based on input topics. The API is rate-limited using the [@unkey/ratelinit](https://www.unkey.com/docs/libraries/ts/ratelimit) package, ensuring controlled access to the service.
+This project is an **FAQ Generator API** built using **Next.js** and **GPT-4o**, designed to create precise and relevant FAQs based on input topics. The API is rate-limited using the [@unkey/ratelimit](https://www.unkey.com/docs/libraries/ts/ratelimit) package, ensuring controlled access to the service.
 
 ### Features
 
@@ -29,7 +29,7 @@ npm install
 
 ### Environment Setup
 
-Change the `.env.example` to `.env` in the project root and set the following environment variables:
+Change the `.env.example` to `.env.local` in the project root and set the following environment variables:
 
 ```bash
 # OpenAI project API Key
@@ -86,4 +86,4 @@ The API returns the following error codes:
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENCE](https://github.com/Ionfinisher/askiq/blob/main/LICENCE) file for details.
