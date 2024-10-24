@@ -9,7 +9,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   //   Make sure the 'topic' parameter is provided
   if (!topic || typeof topic !== "string") {
     return NextResponse.json(
-      { error: "Missing or invalid 'question' parameter" },
+      { error: "Missing or invalid 'topic' parameter" },
       { status: 400 }
     );
   }
